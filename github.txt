@@ -21,4 +21,4 @@ git push origin <branchName>
 //how to pull
 git add .
 git commit -m "some commit"
-git pull origin <branchName> 
+git pu origin <branchName> 
