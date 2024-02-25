@@ -1,11 +1,12 @@
 import { toList } from './toList'; // Adjust the path as necessary
 import { toCSV } from './toCSV';
+import { toJsonList } from './toJsonList';
 // Example function to make API call
 // Replace 'YOUR_API_ENDPOINT' with your actual endpoint
 const postData = async (listData) => {
   try {
     console.log(listData)
-    const response = await fetch('http://127.0.0.1:8080/api/predict/jsonList', {
+    const response = await fetch('https://empdatamingmodel.onrender.com/api/predict/jsonList', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,6 +19,7 @@ const postData = async (listData) => {
     const data = await response.json();
     const dataList = data.pred
     toCSV(dataList,"testCSV.csv")
+    toJsonList(dataList)
     return data;
     // return [0,1,0,]
   } catch (error) {
