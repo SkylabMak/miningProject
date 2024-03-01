@@ -1,7 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
+
 
 function Print() {
+    const location = useLocation();
     const [count, setCount] = useState(0)
+    const { yourData } = location.state || {};
+    useEffect(() => {
+        // Update the document title using the browser API
+        document.title = `You clicked ${count} times`;
+        console.log(yourData)
+      },[]);
 
     return (
         <>

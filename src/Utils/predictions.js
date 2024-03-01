@@ -5,7 +5,7 @@ import { toJsonList } from './toJsonList';
 // Replace 'YOUR_API_ENDPOINT' with your actual endpoint
 const postData = async (listData) => {
   try {
-    console.log(listData)
+    // console.log(listData)
     const response = await fetch('https://empdatamingmodel.onrender.com/api/predict/jsonList', {
       method: 'POST',
       headers: {
@@ -18,9 +18,9 @@ const postData = async (listData) => {
     }
     const data = await response.json();
     const dataList = data.pred
-    toCSV(dataList,"testCSV.csv")
-    toJsonList(dataList)
-    return data;
+    // toCSV(dataList,"testCSV.csv")
+    // toJsonList(dataList)
+    return dataList;
     // return [0,1,0,]
   } catch (error) {
     console.error("Could not fetch predictions:", error);
@@ -32,7 +32,7 @@ export const fetchPredictions_List = async (file) => {
   try {
     const listData = await toList(file);
     const predictions = await postData(listData);
-    console.log(predictions); // Do something with the predictions
+    // console.log(predictions); // Do something with the predictions
     return predictions;
   } catch (error) {
     console.error("Error processing file for predictions:", error);
