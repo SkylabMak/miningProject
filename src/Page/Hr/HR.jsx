@@ -10,10 +10,11 @@ import { useNavigate } from 'react-router-dom';
 function HR() {
     const [count, setCount] = useState(0)
     const [isDragOver, setIsDragOver] = useState(false);
+    const [disable, setDisable] = useState(false);
     const [files, setFiles] = useState([]);
 
     let navigate = useNavigate();
-    
+
     const handleChange = (file) => {
         setFiles([file]); // Keep this if you still need to track the file itself
     };
@@ -27,12 +28,10 @@ function HR() {
             console.log("click")
             // const list = toList(files[0])
             const predictions = await fetchPredictions_List(files[0]);
-            navigate('/hr/print', { state: { yourData: predictions } });
+            navigate('/hr/print', { state: { data: predictions } });
             console.log(predictions)
 
         }
-
-        // Now you have the predictions, you can set them in state or display them
     };
 
     return (
