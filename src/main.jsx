@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import TestPage from './testPage/TestPage.jsx'
 import DragDropPage from './drag-dropPage.jsx'
-import Home from './Page/HomePage.jsx';
+import HomePage from './Page/HomePage.jsx';
 import HR from './Page/Hr/HR.jsx';
 import Emp from './Page/Emp/Emp.jsx';
 import Print from './Page/Hr/Print.jsx';
@@ -33,7 +33,7 @@ export default function MainApp() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<HomePage />} />
         <Route path="testPage" element={<TestPage />} />
         <Route path="dd" element={<DragDropPage />} />
         <Route path="hr" element={<HRRoutes />}>

@@ -1,30 +1,16 @@
 import { useState } from 'react'
+import Home from '../components/Homepage/Home';
+import Credit from '../components/Homepage/Credit';
 
-function Home() {
+function HomePage() {
     const [count, setCount] = useState(0)
 
     return (
-        <>
-            <div className="bg-[#ffffff] h-screen w-screen text-black">
-                <h1 className="text-5xl font-bold underline">
-                    This is Home Page
-                </h1>
-                <h1>Vite + React</h1>
-                <div className="card">
-                    <button className="bg-orange-300"onClick={() => setCount((count) => count + 1)}>
-                        count is {count}
-                    </button>
-                    <p>
-                        Edit <code>src/App.jsx</code> and save to test HMR
-                    </p>
-                </div>
-                <p className="read-the-docs">
-                    Click on the Vite and React logos to learn more
-                </p>
-            </div>
-
-        </>
+        <div className='h-screen w-screen bg-white'>
+            <Home />
+            <Credit />
+        </div>
     )
 }
 
-export default Home
+export default HomePage
