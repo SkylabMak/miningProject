@@ -43,6 +43,7 @@ function Print() {
                     <div className={`grid grid-cols-${features.length} gap-4  text-[36px] font-bold mb-12 `}>
                         {features.map((head) => (<div key={head}>{head}</div>))}
                     </div>
+                    // box
                     <div className={`grid grid-cols-${features.length} gap-x-4`}>
                         {dataJsonList.flatMap((item, itemIndex) =>
                             Object.entries(item)

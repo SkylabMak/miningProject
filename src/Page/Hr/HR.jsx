@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { FileUploader } from 'react-drag-drop-files';
 import { FaFileDownload } from "react-icons/fa";
-import { RxTrackNext } from "react-icons/rx";
 import { toList } from '../../Utils/toList';
 import { fetchPredictions_List } from '../../Utils/predictions';
 import { useNavigate } from 'react-router-dom';
+import { LuArrowRightToLine } from "react-icons/lu";
 
 
 function HR() {
@@ -45,7 +45,7 @@ function HR() {
                     </span>
                 </div>
                 <div className="grow flex flex-col justify-center items-center">
-                    <span className="text-[36px] my-4">
+                    <span className="text-[36px] my-4 font-bold">
                         ระบบคาดการณ์การประเมินบุคลากร
                     </span>
                     <span className="text-[18px] my-4">
@@ -74,7 +74,7 @@ function HR() {
                                         drop or click to upload your file
                                     </div>
                                     <div className={"cursor-pointer	 flex  items-center justify-center px-5 py-2 w-auto bg-[#D9D9D9] rounded-full"}>
-                                        <span className={"text-[36px]"}>
+                                        <span className={"text-[36px] "}>
                                             csv file
                                         </span>
                                         <div className='h-10 min-w-24 mx-4 bg-[#FFFFFF] rounded-full flex items-center'>
@@ -95,9 +95,9 @@ function HR() {
 
                         </div>
                     </div>
-                    <button className='px-8 py-2 flex items-center justify-center w-fit bg-[#176B87] text-white text-[36px]' onClick={btnClick}>
-                        <div className='mr-6'> ถัดไป</div>
-                        <RxTrackNext />
+                    <button className='w-[243px] h-[89px] bg-secondary text-white text-[36px] flex items-center justify-between rounded-[25px]' onClick={btnClick}>
+                        <div> ถัดไป</div>
+                        <LuArrowRightToLine />
                     </button>
 
                 </div>
