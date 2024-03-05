@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { toJsonList } from '../../Utils/toJsonList';
 import { useNavigate } from 'react-router-dom';
-import { RxTrackNext } from "react-icons/rx";
-import { RxTrackPrevious } from "react-icons/rx";
+import { LuArrowLeftToLine } from "react-icons/lu";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 import { toCSV } from '../../Utils/toCSV';
 
 
@@ -32,10 +32,9 @@ function Print() {
     return (
         <>
             <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col">
-                <div className="bg-[#D9D9D9] flex justify-start items-center w-screen py-5">
-                    <div className="inline-block h-max min-h-full w-0.5 self-stretch bg-black mx-8">
-                    </div>
-                    <span className="text-[36px]">
+            <div className="bg-[#F0F9F8]  flex justify-start items-center w-screen py-5">
+                    <div className="inline-block h-max min-h-full w-0.5 self-stretch text-primary mx-8"></div>
+                    <span className="text-[36px] font-bold text-primary">
                         Susan Company
                     </span>
                 </div>
@@ -61,13 +60,13 @@ function Print() {
                     </div>
                 </div>
                 <div className='grid grid-cols-2 gap-x-4 justify-items-center'>
-                <button className='px-8 py-2 flex items-center justify-center w-fit bg-[#176B87] text-white text-[36px] rounded-xl' onClick={btnClickBack}>
-                        <RxTrackPrevious />
+                <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                        <LuArrowLeftToLine />
                         <div className='mr-6'> กลับ</div>
                     </button>
-                <button className='px-8 py-2 flex items-center justify-center w-fit bg-[#176B87] text-white text-[36px] rounded-xl' onClick={btnClickDowload}>
+                <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickDowload}>
                         <div className='mr-6'> ดาวโหลด</div>
-                        <RxTrackNext />
+                        <IoCloudDownloadOutline />
                     </button>
                 </div>
 

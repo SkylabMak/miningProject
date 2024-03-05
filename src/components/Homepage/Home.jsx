@@ -41,11 +41,11 @@ const Home = () => {
                 <div className='flex flex-row justify-center space-x-[100px] my-6 text-black'>
                     <div className='flex flex-col items-center'>
                         <GoPeople className=' size-[77px]' />
-                        <button onClick={(event) => hrPage(event)} className='bg-secondary w-[316px] rounded-full font-medium my-3 mx-auto py-3 text-white text-[24px]'>HR</button>
+                        <button onClick={(event) => hrPage(event)} className='bg-secondary w-[316px] rounded-full font-medium my-3 mx-auto py-3 text-white text-[24px] hover:opacity-80'>HR</button>
                     </div>
                     <div className='flex flex-col items-center'>
                         <BsBoxSeam className=' size-[77px]' />
-                        <button onClick={empPage} className='bg-secondary w-[316px] rounded-full font-medium my-3 mx-auto py-3 text-white text-[24px]'>Employee</button>
+                        <button onClick={empPage} className='bg-secondary w-[316px] rounded-full font-medium my-3 mx-auto py-3 text-white text-[24px] hover:opacity-80'>Employee</button>
                     </div>
                 </div>
             </div>
