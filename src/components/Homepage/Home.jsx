@@ -17,7 +17,7 @@ const Home = () => {
         <section className=' w-full h-[80vh] mx-auto text-center flex flex-col justify-center items-center'>
             <div className='flex items-center justify-center'>
                 <div className='flex h-[600px] justify-center '>
-                    <div className=''>
+                    <div>
                         <div className=' w-[415px] h-[415px] bg-accent opacity-10 rounded-full '></div>
                     </div>
                     <div className='flex flex-col-reverse '>
