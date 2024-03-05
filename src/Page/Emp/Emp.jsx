@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { LuArrowRightToLine } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
 import Selector from './Selector';
+import { postData } from '../../Utils/predictions';
 
 
 function Emp() {
@@ -29,18 +30,50 @@ function Emp() {
         { id: 3, name: "other" },
     ];
 
+    const Awards_wonList = [
+        { id: 1, name: "No" },
+        { id: 2, name: "Yes" },
+    ];
+
 
     //"No_of_trainings""Previous_year_rating"
     //"Length_of_service""Awards_won""Avg_training_score"
     const [department, setDepartment] = useState(Department[0]);
     const [education, setEducation] = useState(Education[0]);
     const [recruitment_channel, setRecruitment_channel] = useState(Recruitment_channel[0]);
+    const [no_of_trainings, setNo_of_trainings] = useState(1);
+    const [previous_year_rating, setPrevious_year_rating] = useState(5);
+    const [length_of_service, setLength_of_service] = useState(3);
+    const [awards_won, setAwards_won] = useState(Awards_wonList[0]);
+    const [avg_training_score, setAvg_training_score] = useState(50);
     // const [count, setCount] = useState(0)
+
+    const prediction = async () => {
+        const body = [
+            department.name,
+            education.name,
+            recruitment_channel.name,
+            no_of_trainings,
+            previous_year_rating,
+            length_of_service,
+            (awards_won.name == "Yes" ? 1:0),
+            avg_training_score
+        ];
+        console.log(body);
+        const pred = await postData(body);
+        console.log(pred);
+        return pred;
+    }
 
     let navigate = useNavigate();
     const btnClick = async () => {
-        navigate('/Emp/resultUnpass');
-        //navigate('/Emp/resultPass');
+        const resultPred = prediction();
+        if(resultPred == 1){
+            navigate('/Emp/resultPass');
+        }
+        else{
+            navigate('/Emp/resultUnpass');
+        }
     };
 
     return (
@@ -69,9 +102,14 @@ function Emp() {
                         <p className='text-[25px] font-semibold mx-2'>Recruitment Channel:</p>
                         <Selector data={Recruitment_channel} selected={recruitment_channel} setSelected={setRecruitment_channel} />
                     </div>
-                    <div class="mb-5">
+                    <div className="mb-5">
                         <p className='text-[25px] font-semibold mx-2'>No Of Trainings:</p>
-                        <input type="int" id="base-input" class="relative w-[10vh] p-3 cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"></input>
+                        <input onChange={(e)=>{
+                            setNo_of_trainings(parseInt(e.target.value))
+                            
+                        }} 
+                        value={no_of_trainings} 
+                            type="number" id="base-input" className="relative w-[10vh] p-3 cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"></input>
                     </div>
                 </div>
             </div>
