@@ -106,7 +106,6 @@ function Emp() {
                         <p className='text-[25px] font-semibold mx-2'>No Of Trainings:</p>
                         <input onChange={(e)=>{
                             setNo_of_trainings(parseInt(e.target.value))
-                            
                         }} 
                         value={no_of_trainings} 
                             type="number" id="base-input" className="relative w-[10vh] p-3 cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"></input>
