@@ -99,7 +99,7 @@ function Emp() {
                     </div>
                     <div className=''>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Education :</p>
-                        <Selector data={Education} selected={education} setSelected={setEducation} />
+                        <Selector className='w-fit	' data={Education} selected={education} setSelected={setEducation} />
                     </div>
                     <div className=''>
                         <p className='text-[22px] text-primary font-semibold mx-2 '>Recruitment Channel :</p>
