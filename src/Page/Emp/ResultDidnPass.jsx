@@ -14,28 +14,27 @@ function ResultDidnPass() {
     return (
         <>
             <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col items-center">
-                <div className="bg-[#D9D9D9] flex justify-start items-center w-screen py-5">
-                    <div className="inline-block h-max min-h-full w-0.5 self-stretch bg-black mx-8">
-                    </div>
-                    <span className="text-[36px] font-bold">
+                <div className="bg-[#F0F9F8]  flex justify-start items-center w-screen py-5">
+                    <div className="inline-block h-max min-h-full w-0.5 self-stretch text-primary mx-8"></div>
+                    <span className="text-[36px] font-bold text-primary">
                         Susan Company
                     </span>
                 </div>
-                <div className='w-[1307px] h-[707px] bg-[#EEEEEE] rounded-xl my-4 p-[60px] flex flex-col space-y-10 items-center'>
-                    <div className='w-[675px] h-[109px] bg-[#D9D9D9] flex items-center justify-evenly rounded-full'>
-                        <FaRegFileExcel className='text-[60px]'/>
-                        <p className=' text-[36px] font-bold'>คุณอาจไม่ได้รับการเลื่อนขั้นในครั้งนี้</p>
+                <div className='w-[120vh] h-[70vh] bg-[#EAFBFA] shadow-xl rounded-xl mt-4 px-9 flex flex-col space-y-10 items-center'>
+                    <div className='w-[90vh] mt-7 py-4 bg-white flex items-center justify-evenly rounded-xl'>
+                        <FaRegFileExcel className='text-[60px] text-red-500' />
+                        <p className=' text-[36px] font-bold text-primary'>คุณอาจไม่ได้รับการเลื่อนขั้นในครั้งนี้</p>
                     </div>
-                    <div className='w-[1123px] h-[300px] bg-[#D9D9D9] rounded-3xl'></div>
+                    <div className='w-[110vh] h-[40vh] bg-white rounded-2xl'></div>
                 </div>
-                <div className='w-[1307px] my-2 flex justify-end'>
-                <div className='w-[1307px] my-2 flex justify-start'>
-                    <button className='w-[255px] h-[89px] bg-secondary text-white text-[36px] flex items-center justify-between rounded-[25px]' onClick={btnClickBack}>
-                    <LuArrowLeftToLine />
-                    <span> ก่อนหน้า</span>
+
+                <div className='w-[120vh] mt-2 flex justify-start'>
+                    <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                        <LuArrowLeftToLine />
+                        <span> ก่อนหน้า</span>
                     </button>
                 </div>
-            </div>
+
             </div>
 
         </>

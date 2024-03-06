@@ -5,6 +5,7 @@ import { toList } from '../../Utils/toList';
 import { fetchPredictions_List } from '../../Utils/predictions';
 import { useNavigate } from 'react-router-dom';
 import { LuArrowRightToLine } from "react-icons/lu";
+import { LuArrowLeftToLine } from "react-icons/lu";
 
 
 function HR() {
@@ -34,21 +35,24 @@ function HR() {
         }
     };
 
+    const btnClickBack = async () => {
+        navigate(-1);
+    };
+
     return (
         <>
             <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col">
-                <div className="bg-[#D9D9D9] flex justify-start items-center w-screen py-5">
-                    <div className="inline-block h-max min-h-full w-0.5 self-stretch bg-black mx-8">
-                    </div>
-                    <span className="text-[36px]">
+                <div className="bg-[#F0F9F8]  flex justify-start items-center w-screen py-5">
+                    <div className="inline-block h-max min-h-full w-0.5 self-stretch text-primary mx-8"></div>
+                    <span className="text-[36px] font-bold text-primary">
                         Susan Company
                     </span>
                 </div>
-                <div className="grow flex flex-col justify-center items-center">
-                    <span className="text-[36px] my-4 font-bold">
+                <div className="grow flex flex-col mt-[15vh] items-center">
+                    <span className="text-[36px] text-primary my-1 font-bold">
                         ระบบคาดการณ์การประเมินบุคลากร
                     </span>
-                    <span className="text-[18px] my-4">
+                    <span className="text-[18px] font-semibold">
                         กรุณาใส่ไฟล์นามสกุล .csv เพื่อทำการประเมิน
                     </span>
                     <div className="flex flex-col items-center justify-center">
@@ -66,14 +70,14 @@ function HR() {
                                     backgroundColor: '#64CCC5',
                                 }}
                             >
-                                <div className={`flex flex-col items-center justify-center px-8 py-4 w-auto`}
+                                <div className={`flex flex-col items-center shadow-xl justify-center px-8 py-4 w-auto`}
 
                                 // style={{ textAlign: 'center', cursor: 'pointer' }}
                                 >
-                                    <div className={"cursor-pointer	 flex  items-center justify-center px-5 py-2 mb-5 w-auto bg-[#D9D9D9] rounded-full"}>
+                                    <div className={"cursor-pointer	 flex  items-center justify-center px-5 py-2 mb-5 w-auto bg-[#EAFBFA] rounded-full"}>
                                         drop or click to upload your file
                                     </div>
-                                    <div className={"cursor-pointer	 flex  items-center justify-center px-5 py-2 w-auto bg-[#D9D9D9] rounded-full"}>
+                                    <div className={"cursor-pointer	 flex  items-center justify-center px-5 py-2 w-auto bg-[#EAFBFA] rounded-full"}>
                                         <span className={"text-[36px] "}>
                                             csv file
                                         </span>
@@ -86,7 +90,7 @@ function HR() {
                                             )}
                                         </div>
                                         <div className="text-[36px]">
-                                            <FaFileDownload />
+                                            <FaFileDownload className='' />
                                         </div>
                                         <span></span>
                                     </div>
@@ -95,10 +99,17 @@ function HR() {
 
                         </div>
                     </div>
-                    <button className='w-[243px] h-[89px] bg-secondary text-white text-[36px] flex items-center justify-between rounded-[25px]' onClick={btnClick}>
+                    <div className='flex space-x-8'>
+                    <button className=' w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                        <LuArrowLeftToLine />
+                        <span> ก่อนหน้า</span>
+                    </button>
+                    <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClick}>
                         <div> ถัดไป</div>
                         <LuArrowRightToLine />
                     </button>
+                    </div>
+                    
 
                 </div>
 
