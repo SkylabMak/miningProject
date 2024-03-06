@@ -69,9 +69,6 @@ function Print() {
                         <IoCloudDownloadOutline />
                     </button>
                 </div>
-
-
-
             </div>
 
         </>
