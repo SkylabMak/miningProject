@@ -3,15 +3,6 @@ import { Combobox, Transition } from '@headlessui/react'
 import { LuChevronsUpDown } from "react-icons/lu";
 import { IoCheckmark } from "react-icons/io5";
 
-const people = [
-  { id: 1, name: 'Wade Cooper' },
-  { id: 2, name: 'Arlene Mccoy' },
-  { id: 3, name: 'Devon Webb' },
-  { id: 4, name: 'Tom Cook' },
-  { id: 5, name: 'Tanya Fox' },
-  { id: 6, name: 'Hellen Schmidt' },
-]
-
 function Selector({data,selected,setSelected}) {
   const [query, setQuery] = useState('')
   const filteredPeople =

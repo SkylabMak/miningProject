@@ -20,15 +20,15 @@ function ResultDidnPass() {
                         Susan Company
                     </span>
                 </div>
-                <div className='w-[120vh] h-[70vh] bg-[#EAFBFA] shadow-xl rounded-xl mt-4 px-9 flex flex-col space-y-10 items-center'>
-                    <div className='w-[90vh] mt-7 py-4 bg-white flex items-center justify-evenly rounded-xl'>
+                <div className='w-[57vw] pb-9 bg-[#EAFBFA] shadow-xl rounded-xl mt-4 px-9 flex flex-col space-y-10 items-center'>
+                    <div className='w-[40vw] mt-7 py-4 bg-white flex items-center justify-evenly rounded-2xl'>
                         <FaRegFileExcel className='text-[60px] text-red-500' />
-                        <p className=' text-[36px] font-bold text-primary'>คุณอาจไม่ได้รับการเลื่อนขั้นในครั้งนี้</p>
+                        <p className=' lg:text-[36px] font-bold text-primary md:text-[20px]'>คุณอาจไม่ได้รับการเลื่อนขั้นในครั้งนี้</p>
                     </div>
-                    <div className='w-[110vh] h-[40vh] bg-white rounded-2xl'></div>
+                    <div className='w-[50vw] h-[40vh] bg-white rounded-2xl'></div>
                 </div>
 
-                <div className='w-[120vh] mt-2 flex justify-start'>
+                <div className='w-[57vw] mt-2 flex justify-start'>
                     <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                         <LuArrowLeftToLine />
                         <span> ก่อนหน้า</span>

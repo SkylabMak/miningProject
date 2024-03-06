@@ -87,11 +87,11 @@ function Emp() {
                     Susan Company
                 </span>
             </div>
-            <div className='w-[120vh] h-[70vh] bg-[#EAFBFA] shadow-xl rounded-xl mt-4 pt-[60px] px-9 space-y-10 '>
+            <div className='w-[57vw]  bg-[#EAFBFA] shadow-xl rounded-xl mt-4 pb-9 pt-[60px] px-9 space-y-10 '>
                 <div className=''>
                     <span className='flex text-[36px] text-primary font-bold px-14'>Employee</span>
                 </div>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='lg:grid lg:grid-cols-3 lg:gap-4 md:grid md:grid-cols-1 md:gap-4'>
                     <div className=''>
                         <p className='text-[22px]  text-primary font-semibold mx-2'>Department :</p>
                         <Selector data={Department} selected={department} setSelected={setDepartment} />
@@ -139,7 +139,7 @@ function Emp() {
 
                 </div>
             </div>
-            <div className='w-[120vh] my-2 flex justify-between'>
+            <div className='w-[57vw] my-2 flex justify-between'>
                 <button className=' w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                     <LuArrowLeftToLine />
                     <span> ก่อนหน้า</span>
