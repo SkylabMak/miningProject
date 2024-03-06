@@ -68,6 +68,7 @@ function Emp() {
     let navigate = useNavigate();
     const btnClick = async () => {
         const resultPred = prediction();
+        console.log(resultPred);
         if (resultPred == 1) {
             navigate('/Emp/resultPass');
         }
@@ -98,7 +99,7 @@ function Emp() {
                     </div>
                     <div className=''>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Education :</p>
-                        <Selector data={Education} selected={education} setSelected={setEducation} />
+                        <Selector className='w-fit	' data={Education} selected={education} setSelected={setEducation} />
                     </div>
                     <div className=''>
                         <p className='text-[22px] text-primary font-semibold mx-2 '>Recruitment Channel :</p>
@@ -140,11 +141,14 @@ function Emp() {
                 </div>
             </div>
             <div className='w-[57vw] my-2 flex justify-between'>
-                <button className=' w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                <button className='flex-none  w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                     <LuArrowLeftToLine />
                     <span> ก่อนหน้า</span>
                 </button>
-                <button className=' w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClick}>
+                {/* <div className="grow">
+
+                </div> */}
+                <button className='flex-none w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClick}>
                     <span> ถัดไป</span>
                     <LuArrowRightToLine />
                 </button>

@@ -26,11 +26,18 @@ function HR() {
 
     const btnClick = async () => {
         if (files.length > 0) {
-            console.log("click")
-            // const list = toList(files[0])
-            const predictions = await fetchPredictions_List(files[0]);
-            navigate('/hr/print', { state: { data: predictions } });
-            console.log(predictions)
+            try {
+                const predictions = await fetchPredictions_List(files[0]);
+                if(predictions === undefined){
+                    alert('The file format is incorrect.',)
+                    return;
+                }
+                navigate('/hr/print', { state: { data: predictions } }); // Navigate with the fetched predictions
+                console.log(predictions);
+            } catch (error) {
+                console.error("Error fetching predictions:", error);
+                alert('Error fetching predictions:',)
+            }
 
         }
     };
