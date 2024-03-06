@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaRegFileExcel } from "react-icons/fa6";
 import { LuArrowLeftToLine } from "react-icons/lu";
+import { AiOutlineHome } from "react-icons/ai";
 
 function ResultDidnPass() {
     const [count, setCount] = useState(0)
@@ -10,15 +11,18 @@ function ResultDidnPass() {
     const btnClickBack = async () => {
         navigate(-1);
     };
+    const btnClickHome = async () => {
+        navigate('/');
+    }
 
     return (
         <>
             <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col items-center">
-                <div className="bg-[#F0F9F8]  flex justify-start items-center w-screen py-5">
-                    <div className="inline-block h-max min-h-full w-0.5 self-stretch text-primary mx-8"></div>
-                    <span className="text-[36px] font-bold text-primary">
+            <div className="bg-[#F0F9F8] w-full flex justify-between px-[70px] py-3 items-center">
+                    <span className="text-[28px] font-bold text-primary" onClick={btnClickHome}>
                         Susan Company
                     </span>
+                    <AiOutlineHome className='text-[30px]' onClick={btnClickHome}/>
                 </div>
                 <div className='w-[57vw] pb-9 bg-[#EAFBFA] shadow-xl rounded-xl mt-4 px-9 flex flex-col space-y-10 items-center'>
                     <div className='w-[40vw] mt-7 py-4 bg-white flex items-center justify-evenly rounded-2xl'>

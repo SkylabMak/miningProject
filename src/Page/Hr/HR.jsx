@@ -6,6 +6,7 @@ import { fetchPredictions_List } from '../../Utils/predictions';
 import { useNavigate } from 'react-router-dom';
 import { LuArrowRightToLine } from "react-icons/lu";
 import { LuArrowLeftToLine } from "react-icons/lu";
+import { AiOutlineHome } from "react-icons/ai";
 
 
 function HR() {
@@ -45,15 +46,18 @@ function HR() {
     const btnClickBack = async () => {
         navigate(-1);
     };
+    const btnClickHome = async () => {
+        navigate('/');
+    }
 
     return (
         <>
             <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col">
-                <div className="bg-[#F0F9F8]  flex justify-start items-center w-screen py-5">
-                    <div className="inline-block h-max min-h-full w-0.5 self-stretch text-primary mx-8"></div>
-                    <span className="text-[36px] font-bold text-primary">
+            <div className="bg-[#F0F9F8] w-full flex justify-between px-[70px] py-3 items-center">
+                    <span className="text-[28px] font-bold text-primary" onClick={btnClickHome}>
                         Susan Company
                     </span>
+                    <AiOutlineHome className='text-[30px]' onClick={btnClickHome}/>
                 </div>
                 <div className="grow flex flex-col mt-[15vh] items-center">
                     <span className="text-[36px] text-primary my-1 font-bold">
@@ -61,6 +65,12 @@ function HR() {
                     </span>
                     <span className="text-[18px] font-semibold">
                         กรุณาใส่ไฟล์นามสกุล .csv เพื่อทำการประเมิน
+                    </span>
+                    <span className="text-[18px] font-semibold">
+                        คอลัมน์อย่างน้อย : department, education, recruitment_channel, 
+                no_of_trainings, previous_year_rating, 
+                length_of_service, awards_won, 
+                avg_training_score
                     </span>
                     <div className="flex flex-col items-center justify-center">
                         <div
