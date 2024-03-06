@@ -55,6 +55,8 @@ export const postData = async (listData) => {
 export const fetchPredictions_List = async (file) => {
   try {
     const listData = await toList(file);
+    // toCSV(listData)
+    console.log(listData);
     const predictions = await postDataList(listData);
     // console.log(predictions); // Do something with the predictions
     return predictions;

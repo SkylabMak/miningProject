@@ -53,7 +53,9 @@ function Print() {
                                 .filter(([key, _]) => features.includes(key))
                                 .map(([key, value], valueIndex) => (
                                     <div key={`${item.employee_id}-${key}-${valueIndex}`}
-                                        className='bg-[#ffffff] py-4 rounded-lg my-[-5px] flex justify-center'>
+                                        className={'bg-[#ffffff] py-4 rounded-lg my-[-5px] flex justify-center'+ value === 0}
+                                        
+                                        >
                                         {
                                             key === "is_promote" ? (value === 0 ? "no" : "yes") : value
                                         }
