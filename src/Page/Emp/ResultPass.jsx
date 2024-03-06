@@ -29,7 +29,7 @@ function ResultPass() {
                 </div>
 
                 <div className='w-[120vh] mt-2 flex justify-start'>
-                    <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                    <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                         <LuArrowLeftToLine />
                         <span> ก่อนหน้า</span>
                     </button>

@@ -38,14 +38,14 @@ function Emp() {
     ];
 
 
-    const [department, setDepartment] = useState(Department[0]);
-    const [education, setEducation] = useState(Education[0]);
+    const [department, setDepartment] = useState(Department[7]);
+    const [education, setEducation] = useState(Education[2]);
     const [recruitment_channel, setRecruitment_channel] = useState(Recruitment_channel[0]);
-    const [no_of_trainings, setNo_of_trainings] = useState();
-    const [previous_year_rating, setPrevious_year_rating] = useState();
-    const [length_of_service, setLength_of_service] = useState();
-    const [awards_won, setAwards_won] = useState(Awards_wonList[0]);
-    const [avg_training_score, setAvg_training_score] = useState();
+    const [no_of_trainings, setNo_of_trainings] = useState(3);
+    const [previous_year_rating, setPrevious_year_rating] = useState(5);
+    const [length_of_service, setLength_of_service] = useState(3);
+    const [awards_won, setAwards_won] = useState(Awards_wonList[1]);
+    const [avg_training_score, setAvg_training_score] = useState(100);
     // const [count, setCount] = useState(0)
 
     const prediction = async () => {
@@ -67,9 +67,9 @@ function Emp() {
 
     let navigate = useNavigate();
     const btnClick = async () => {
-        const resultPred = prediction();
-        console.log(resultPred);
-        if (resultPred == 1) {
+        const resultPred = await prediction();
+        if (resultPred === 1) {
+            console.log("compldasdaedf")
             navigate('/Emp/resultPass');
         }
         else {
@@ -88,7 +88,7 @@ function Emp() {
                     Susan Company
                 </span>
             </div>
-            <div className='w-[57vw]  bg-[#EAFBFA] shadow-xl rounded-xl mt-4 pb-9 pt-[60px] px-9 space-y-10 '>
+            <div className='w-[57vw]  bg-[#EAFBFA] shadow-xl rounded-xl mt-4 pb-9 pt-[60px] px-9 space-y-5 '>
                 <div className=''>
                     <span className='flex text-[36px] text-primary font-bold px-14'>Employee</span>
                 </div>
@@ -111,7 +111,7 @@ function Emp() {
                     </div>
                     <div className="mb-5">
                         <p className='text-[22px] text-primary font-semibold mx-2'>No Of Trainings :</p>
-                        <input placeholder="0" onChange={(e) => {
+                        <input placeholder="3" onChange={(e) => {
                             setNo_of_trainings(parseInt(e.target.value))
                         }}
                             value={no_of_trainings}
@@ -121,7 +121,7 @@ function Emp() {
                         <input placeholder="0" onChange={(e) => {
                             setPrevious_year_rating(parseInt(e.target.value))
                         }}
-                            value={previous_year_rating} type="number" min="0" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={previous_year_rating} type="number" min="0" max="5" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Length Of Service :</p>
@@ -141,14 +141,11 @@ function Emp() {
                 </div>
             </div>
             <div className='w-[57vw] my-2 flex justify-between'>
-                <button className='flex-none  w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                     <LuArrowLeftToLine />
                     <span> ก่อนหน้า</span>
                 </button>
-                {/* <div className="grow">
-
-                </div> */}
-                <button className='flex-none w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClick}>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClick}>
                     <span> ถัดไป</span>
                     <LuArrowRightToLine />
                 </button>

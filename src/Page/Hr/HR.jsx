@@ -107,11 +107,11 @@ function HR() {
                         </div>
                     </div>
                     <div className='flex space-x-8'>
-                    <button className=' w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                    <button className=' w-auto space-x-3 mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center  rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                         <LuArrowLeftToLine />
                         <span> ก่อนหน้า</span>
                     </button>
-                    <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClick}>
+                    <button className='w-auto space-x-3 mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center  rounded-[25px] hover:opacity-80' onClick={btnClick}>
                         <div> ถัดไป</div>
                         <LuArrowRightToLine />
                     </button>
