@@ -38,8 +38,8 @@ function Print() {
                         Susan Company
                     </span>
                 </div>
-                <div className="bg-[#EEEEEE] rounded-xl m-4 p-4 ">
-                    <div className={`grid grid-cols-${features.length} gap-4  text-[36px] font-bold mb-12 `}>
+                <div className="bg-[#EAFBFA] rounded-xl m-4 p-4 ">
+                    <div className={`grid grid-cols-${features.length} gap-4  text-[36px] text-primary font-bold mb-12 `}>
                         {features.map((head) => (<div key={head}>{head}</div>))}
                     </div>
                     // box
@@ -60,11 +60,11 @@ function Print() {
                     </div>
                 </div>
                 <div className='grid grid-cols-2 gap-x-4 justify-items-center'>
-                <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
                         <LuArrowLeftToLine />
                         <div className='mr-6'> กลับ</div>
                     </button>
-                <button className='w-[22vh] mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center justify-between rounded-[25px] hover:opacity-80' onClick={btnClickDowload}>
+                <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickDowload}>
                         <div className='mr-6'> ดาวโหลด</div>
                         <IoCloudDownloadOutline />
                     </button>
