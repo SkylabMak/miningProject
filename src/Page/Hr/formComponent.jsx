@@ -1,13 +1,14 @@
+import React from 'react'
 import { useState } from 'react'
 import { LuArrowRightToLine } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
-import Selector from './Selector';
+import Selector from '../Emp/Selector';
 import { postData } from '../../Utils/predictions';
 import { LuArrowLeftToLine } from "react-icons/lu";
-import { AiOutlineHome } from "react-icons/ai";
 
 
-function Emp() {
+
+function formComponent() {
     const Department = [
         { id: 1, name: 'Analytics' },
         { id: 2, name: 'Finance' },
@@ -82,23 +83,13 @@ function Emp() {
     const btnClickHome = async () => {
         navigate('/');
     }
-
     return (
-        <div className="bg-[#ffffff] h-screen w-screen text-black flex flex-col items-center">
-            <div className="bg-[#F0F9F8] w-full flex justify-between px-[70px] py-3 items-center">
-                <span className="text-[28px] font-bold text-primary" onClick={btnClickHome}>
-                    Susan Company
-                </span>
-                <AiOutlineHome className='text-[30px]' onClick={btnClickHome} />
-            </div>
-            <span className="text-[36px] text-primary my-5 font-bold">
-                ระบบคาดการณ์การประเมินบุคลากร
-            </span>
-            <div className='w-[57vw]  bg-[#EAFBFA] shadow-xl rounded-xl  pb-9 pt-[40px] px-9 space-y-5 '>
+        <div>
+            <div className='w-[72vw]  bg-[#EAFBFA] shadow-xl rounded-xl  pb-9 pt-[35px] px-9 space-y-5 '>
                 <div className=''>
                     <span className='flex text-[36px] text-primary font-bold px-14'>กรอกข้อมูล</span>
                 </div>
-                <div className='lg:grid lg:grid-cols-3 lg:gap-4 md:grid md:grid-cols-1 md:gap-4'>
+                <div className='lg:grid lg:grid-cols-4 lg:gap-4 md:grid md:grid-cols-1 md:gap-4'>
                     <div className=''>
                         <p className='text-[22px]  text-primary font-semibold mx-2'>Department :</p>
                         <Selector data={Department} selected={department} setSelected={setDepartment} />
@@ -146,12 +137,12 @@ function Emp() {
 
                 </div>
             </div>
-            <div className='w-[57vw] my-2 flex justify-between'>
-                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickBack}>
+            <div className='w-[72vw] my-2 flex justify-between'>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickBack}>
                     <LuArrowLeftToLine />
                     <span> ก่อนหน้า</span>
                 </button>
-                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
                     <span> ถัดไป</span>
                     <LuArrowRightToLine />
                 </button>
@@ -160,4 +151,4 @@ function Emp() {
     )
 }
 
-export default Emp
+export default formComponent

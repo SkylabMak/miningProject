@@ -71,7 +71,6 @@ function Print() {
                                     ><div className=' w-full py-3 hover:bg-[#C5EBE9] rounded-xl  flex justify-center'>
                                             {
                                                 key === "is_promote" || key === "awards_won"  ? (value == 0 ? "no" : "yes") : value
-                        
                                             }
                                         </div>
                                     </div>
@@ -82,14 +81,14 @@ function Print() {
                 </div>
                 <div className='h-[100vh] w-screen text-white mt-[110px] flex justify-center'>@Susan Company</div>
                 <div className='fixed bottom-10 grid grid-cols-4 gap-x-4 justify-items-center'>
-                    <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickBack}>
+                    <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickBack}>
                         <LuArrowLeftToLine />
                         <div className='mr-6'> กลับ</div>
                     </button>
                     <div></div>
                     <div></div>
-                    <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:opacity-80' onClick={btnClickDowload}>
-                        <div className='mr-6'> ดาวโหลด</div>
+                    <button className='w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickDowload}>
+                        <div className='mr-6'> ดาวน์โหลด</div>
                         <IoCloudDownloadOutline />
                     </button>
                 </div>
