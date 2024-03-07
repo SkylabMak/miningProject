@@ -94,9 +94,9 @@ function Emp() {
             <span className="text-[36px] text-primary my-5 font-bold">
                 ระบบคาดการณ์การประเมินบุคลากร
             </span>
-            <div className='w-[57vw]  bg-[#EAFBFA] shadow-xl rounded-xl  pb-9 pt-[40px] px-9 space-y-5 '>
+            <div className='w-[57vw]  bg-[#EAFBFA] shadow-lg rounded-xl  pb-9 pt-[40px] px-9 space-y-5 '>
                 <div className=''>
-                    <span className='flex text-[36px] text-primary font-bold px-14'>กรอกข้อมูล</span>
+                    <span className='flex text-[36px] text-primary font-bold '>กรุณากรอกข้อมูล</span>
                 </div>
                 <div className='lg:grid lg:grid-cols-3 lg:gap-4 md:grid md:grid-cols-1 md:gap-4'>
                     <div className=''>
@@ -121,37 +121,37 @@ function Emp() {
                             setNo_of_trainings(parseInt(e.target.value))
                         }}
                             value={no_of_trainings}
-                            type="number" id="base-input" min="0" className="relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm"></input></div>
+                            type="number" id="base-input" min="0" className="relative  h-[60px] w-[237px] outline-none border-none font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm"></input></div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Previous Year Rating :</p>
                         <input placeholder="0" onChange={(e) => {
                             setPrevious_year_rating(parseInt(e.target.value))
                         }}
-                            value={previous_year_rating} type="number" min="0" max="5" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={previous_year_rating} type="number" min="0" max="5" className='relative  h-[60px] w-[237px] outline-none border-none font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Length Of Service :</p>
                         <input placeholder="0" onChange={(e) => {
                             setLength_of_service(parseInt(e.target.value))
                         }}
-                            value={length_of_service} type="number" min="0" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={length_of_service} type="number" min="0" className='relative  h-[60px] w-[237px] outline-none border-nonefont-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Avg Training Score :</p>
                         <input placeholder="0" onChange={(e) => {
                             setAvg_training_score(parseInt(e.target.value))
                         }}
-                            value={avg_training_score} type="number" min="0" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={avg_training_score} type="number" min="0" className='relative  h-[60px] w-[237px] outline-none border-none font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
 
                 </div>
             </div>
             <div className='w-[57vw] my-2 flex justify-between'>
-                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickBack}>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClickBack}>
                     <LuArrowLeftToLine />
                     <span> ก่อนหน้า</span>
                 </button>
-                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[24px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
+                <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
                     <span> ถัดไป</span>
                     <LuArrowRightToLine />
                 </button>

@@ -32,17 +32,17 @@ function HR() {
                     <AiOutlineHome className='text-[30px]' onClick={btnClickHome} />
                 </div>
                 
-                <span className="text-[36px] text-primary mt-4 font-bold">
+                <span className="text-[36px] text-primary mt-9 font-bold">
                     ระบบคาดการณ์การประเมินบุคลากร
                 </span>
                 
                 
                     <div className='flex justify-center space-x-2 mb-4 mt-4 items-center' >
                         <span className=' text-[18px]'> ประเภทการกรอกข้อมูล:</span>
-                        <button className='w-auto shadow-xl bg-[#DD8D16] border-white text-white text-[18px] flex items-center space-x-3 rounded-lg hover:bg-[#E8AB4F]' onClick={btnFormClick}>
+                        <button className={`w-auto shadow-md ${(!CSVComponent )?"bg-[#DD8D16] text-white":"bg-[#E4EBF4] text-black"} border-white text-[18px] flex items-center space-x-3 rounded-lg hover:bg-[#E8AB4F]`} onClick={btnFormClick}>
                             <div> รายบุคคล </div>
                         </button>
-                        <button className='w-auto shadow-xl bg-[#DD8D16] border-white text-white text-[18px] flex items-center space-x-3 rounded-lg hover:bg-[#E8AB4F]' onClick={btnCSVClick}>
+                        <button className={`w-auto shadow-md ${(CSVComponent )?"bg-[#DD8D16] text-white":"bg-[#E4EBF4] text-black"} border-white text-[18px] flex items-center space-x-3 rounded-lg hover:bg-[#E8AB4F]`} onClick={btnCSVClick}>
                             <div> csv</div>
                         </button>
                     </div>

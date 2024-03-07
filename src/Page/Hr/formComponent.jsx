@@ -37,8 +37,9 @@ function formComponent() {
         { id: 1, name: "No" },
         { id: 2, name: "Yes" },
     ];
-
-
+    
+    
+    const [empID, setEmpID] = useState("000000");
     const [department, setDepartment] = useState(Department[7]);
     const [education, setEducation] = useState(Education[2]);
     const [recruitment_channel, setRecruitment_channel] = useState(Recruitment_channel[0]);
@@ -69,27 +70,33 @@ function formComponent() {
     let navigate = useNavigate();
     const btnClick = async () => {
         const resultPred = await prediction();
+        const features = ["employee_id", "department", "length_of_service", "awards_won", "avg_training_score", "is_promote",]
+        const answer = [empID,department.name,length_of_service, (awards_won.name == "Yes" ? 1 : 0),avg_training_score, resultPred,]
         if (resultPred === 1) {
             console.log("compldasdaedf")
-            navigate('/Emp/resultPass');
+            navigate('/hr/print', { state: { data: [features,answer] } });
         }
         else {
-            navigate('/Emp/resultUnpass');
+            navigate('/hr/print', { state: { data: [features,answer] } });
         }
     };
     const btnClickBack = async () => {
         navigate(-1);
     };
-    const btnClickHome = async () => {
-        navigate('/');
-    }
     return (
         <div>
-            <div className='w-[72vw]  bg-[#EAFBFA] shadow-xl rounded-xl  pb-9 pt-[35px] px-9 space-y-5 '>
+            <div className='w-[72vw]  bg-[#EAFBFA] shadow-lg rounded-xl  pb-9 pt-[35px] px-9 space-y-5 '>
                 <div className=''>
-                    <span className='flex text-[36px] text-primary font-bold px-14'>กรอกข้อมูล</span>
+                    <span className='flex text-[30px] text-primary font-bold '>กรุณากรอกข้อมูล</span>
                 </div>
                 <div className='lg:grid lg:grid-cols-4 lg:gap-4 md:grid md:grid-cols-1 md:gap-4'>
+                    <div className=''>
+                        <p className='text-[22px]  text-primary font-semibold mx-2'>Employee_ID  :</p>
+                        <input placeholder="0" onChange={(e) => {
+                            setEmpID(e.target.value)
+                        }}
+                            value={empID} type="string"  className='relative h-[60px] w-[237px] outline-none border-none  font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                    </div>
                     <div className=''>
                         <p className='text-[22px]  text-primary font-semibold mx-2'>Department :</p>
                         <Selector data={Department} selected={department} setSelected={setDepartment} />
@@ -108,31 +115,31 @@ function formComponent() {
                     </div>
                     <div className="mb-5">
                         <p className='text-[22px] text-primary font-semibold mx-2'>No Of Trainings :</p>
-                        <input placeholder="3" onChange={(e) => {
+                        <input  placeholder="3" onChange={(e) => {
                             setNo_of_trainings(parseInt(e.target.value))
                         }}
                             value={no_of_trainings}
-                            type="number" id="base-input" min="0" className="relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm"></input></div>
+                            type="number" id="base-input" min="0" className="relative outline-none border-none h-[60px] w-[237px] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm"></input></div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Previous Year Rating :</p>
                         <input placeholder="0" onChange={(e) => {
                             setPrevious_year_rating(parseInt(e.target.value))
                         }}
-                            value={previous_year_rating} type="number" min="0" max="5" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={previous_year_rating} type="number" min="0" max="5" className='relative outline-none border-none h-[60px] w-[237px] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Length Of Service :</p>
                         <input placeholder="0" onChange={(e) => {
                             setLength_of_service(parseInt(e.target.value))
                         }}
-                            value={length_of_service} type="number" min="0" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={length_of_service} type="number" min="0" className='relative outline-none border-none h-[60px] w-[237px] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
                     <div>
                         <p className='text-[22px] text-primary font-semibold mx-2'>Avg Training Score :</p>
                         <input placeholder="0" onChange={(e) => {
                             setAvg_training_score(parseInt(e.target.value))
                         }}
-                            value={avg_training_score} type="number" min="0" className='relative outline-none border-none w-[15vh] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
+                            value={avg_training_score} type="number" min="0" className='relative outline-none border-none h-[60px] w-[237px] font-bold mt-1 text-gray-500 p-3 cursor-default overflow-hidden rounded-lg border-white bg-white text-left shadow-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 sm:text-sm'></input>
                     </div>
 
                 </div>

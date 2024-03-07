@@ -21,6 +21,7 @@ function Print() {
         // Update the document title using the browser API
         // document.title = `You clicked ${count} times`;
         console.log(dataJsonList)
+        console.log(data)
     }, []);
 
     const btnClickDowload = async () => {
