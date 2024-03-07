@@ -35,6 +35,7 @@ function csvCompanent() {
                 const predictions = await fetchPredictions_List(files[0]);
                 if (predictions === undefined) {
                     alert('รูปแบบไฟล์ไม่ถูกต้อง',)
+                    setLoading(false);
                     return;
                 }
                 navigate('/hr/print', { state: { data: predictions } }); // Navigate with the fetched predictions
@@ -42,10 +43,12 @@ function csvCompanent() {
             } catch (error) {
                 console.error("ทำนายผิดพลาด :", error);
                 alert('ทำนายผิดพลาด',)
+                setLoading(false);
             }
 
         }else{
             alert('คุณยังไม่ได้เลือกไฟล์',)
+            setLoading(false);
         }
     };
     return (
