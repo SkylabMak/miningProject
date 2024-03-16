@@ -5,7 +5,7 @@ import Selector from './Selector';
 import { postData } from '../../Utils/predictions';
 import { LuArrowLeftToLine } from "react-icons/lu";
 import { AiOutlineHome } from "react-icons/ai";
-
+import ReactLoading from 'react-loading';
 
 function Emp() {
     const Department = [
@@ -46,9 +46,11 @@ function Emp() {
     const [length_of_service, setLength_of_service] = useState(3);
     const [awards_won, setAwards_won] = useState(Awards_wonList[1]);
     const [avg_training_score, setAvg_training_score] = useState(100);
+    const [loading,setLoading] = useState(false);
     // const [count, setCount] = useState(0)
 
     const prediction = async () => {
+        setLoading(true);
         const body = [
             department.name,
             education.name,
@@ -153,7 +155,8 @@ function Emp() {
                 </button>
                 <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
                     <span> ถัดไป</span>
-                    <LuArrowRightToLine />
+                    {!loading &&<LuArrowRightToLine/>}
+                    {loading && <ReactLoading type={"spin"} color={"#DD8D16"} height={30} width={30} />}
                 </button>
             </div>
         </div>

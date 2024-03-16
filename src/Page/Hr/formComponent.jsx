@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Selector from '../Emp/Selector';
 import { postData } from '../../Utils/predictions';
 import { LuArrowLeftToLine } from "react-icons/lu";
-
+import ReactLoading from 'react-loading';
 
 
 function formComponent() {
@@ -48,6 +48,7 @@ function formComponent() {
     const [length_of_service, setLength_of_service] = useState(3);
     const [awards_won, setAwards_won] = useState(Awards_wonList[1]);
     const [avg_training_score, setAvg_training_score] = useState(100);
+    const [loading,setLoading] = useState(false);
     // const [count, setCount] = useState(0)
 
     const prediction = async () => {
@@ -69,6 +70,7 @@ function formComponent() {
 
     let navigate = useNavigate();
     const btnClick = async () => {
+        setLoading(true);
         const resultPred = await prediction();
         const features = ["employee_id", "department", "length_of_service", "awards_won", "avg_training_score", "is_promote",]
         const answer = [empID,department.name,length_of_service, (awards_won.name == "Yes" ? 1 : 0),avg_training_score, resultPred,]
@@ -151,7 +153,8 @@ function formComponent() {
                 </button>
                 <button className=' w-auto mt-4 shadow-xl bg-secondary border-white text-white text-[18px] flex items-center space-x-3 rounded-[25px] hover:bg-[#3A9FC1]' onClick={btnClick}>
                     <span> ถัดไป</span>
-                    <LuArrowRightToLine />
+                    {!loading &&<LuArrowRightToLine/>}
+                    {loading && <ReactLoading type={"spin"} color={"#DD8D16"} height={30} width={30} />}
                 </button>
             </div>
         </div>
